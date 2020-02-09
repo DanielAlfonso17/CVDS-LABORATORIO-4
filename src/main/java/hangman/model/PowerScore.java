@@ -1,7 +1,8 @@
 package hangman.model;
 public class PowerScore implements GameScore{
+	private int puntaje;
 	public PowerScore(){
-		
+		this.puntaje=0;
 	}
 	
 	/**
@@ -13,7 +14,7 @@ public class PowerScore implements GameScore{
 	@throws cuando el puntaje minimo es menor que 0 
 	**/
 	public int calculateScore(int correctCount, int incorrectCount){
-	
+		return 1;
 	}
 
 

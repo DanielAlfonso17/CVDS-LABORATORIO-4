@@ -1,6 +1,8 @@
 package hangman.model;
 public class BonusScore implements GameScore{
+	private int puntaje;
 	public BonusScore(){
+		this.puntaje=0;
 		
 	}
 	
@@ -12,7 +14,7 @@ public class BonusScore implements GameScore{
 	@throws cuando el puntaje minimo es menor que 0 
 	**/
 	public int calculateScore(int correctCount, int incorrectCount){
-	
+		return 1;
 	}
 
 
