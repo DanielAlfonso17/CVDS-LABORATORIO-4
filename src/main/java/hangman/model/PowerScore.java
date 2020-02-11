@@ -13,23 +13,22 @@ public class PowerScore implements GameScore{
 	@param int incorrectCount
 	@throws cuando el puntaje minimo es menor que 0 
 	**/
-	public int calculateScore(int correctCount, int incorrectCount){
-		for(int i=1; i<=correctCount; i++){
-			if(puntaje+correctCount>=500){
-				puntaje = 500;
-			}else{
-				puntaje += Math.pow(5,i);
-			}
-		}
-		for(int i=0;i <incorrectCount; i++){
-			if(puntaje > 0 && puntaje-8 >=0){
-				puntaje -= 8; 
-			}else if(puntaje-8 < 0){
-				puntaje =0;
-			}
-		}
-		return puntaje;
-	}
+	public int calculateScore(int correctCount, int incorrectCount)throws modelException{
+        if(correctCount <0 || incorrectCount <0 ){
+            throw new modelException("Parametros Invalidos.");
+        }
+        int respuesta = 0;
+        for(int i=0; i<correctCount;i++){
+            respuesta += Math.pow(5,i+1);
+        }
+        respuesta -= incorrectCount*8;
+        if (respuesta < 0){
+            respuesta = 0;
+        }else if(respuesta > 500){
+            respuesta = 500;
+        }
+        return respuesta;
+    }
 
 
 }

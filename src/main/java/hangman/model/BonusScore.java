@@ -12,19 +12,18 @@ public class BonusScore implements GameScore{
 	@param int incorrectCount
 	@throws cuando el puntaje minimo es menor que 0 
 	**/
-	public int calculateScore(int correctCount, int incorrectCount){
-		for(int i=0; i<correctCount ; i++){
-			puntaje += 10;
-		}
-		for(int i=0;i <incorrectCount; i++){
-			if(puntaje > 0 && puntaje-5 >=0){
-				puntaje -= 5; 
-			}else if(puntaje-5 < 0){
-				puntaje =0;
-			}
-		}
-		return puntaje;
-	}
+	public int calculateScore(int correctCount, int incorrectCount) throws modelException{
+		if(correctCount <0 || incorrectCount <0 ){
+            throw new modelException("Parametros Invalidos.");
+        }
+        int respuesta = 0;
+        int puntaje = 0;
+        respuesta = puntaje - (incorrectCount*5) + (correctCount*10);
+        if (respuesta < 0){
+            respuesta = 0;
+        }
+        return respuesta;
+    }
 
 
 }
