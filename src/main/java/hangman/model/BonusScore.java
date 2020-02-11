@@ -3,7 +3,6 @@ public class BonusScore implements GameScore{
 	private int puntaje;
 	public BonusScore(){
 		this.puntaje=0;
-		
 	}
 	
 	/**
@@ -14,7 +13,17 @@ public class BonusScore implements GameScore{
 	@throws cuando el puntaje minimo es menor que 0 
 	**/
 	public int calculateScore(int correctCount, int incorrectCount){
-		return 1;
+		for(int i=0; i<correctCount ; i++){
+			puntaje += 10;
+		}
+		for(int i=0;i <incorrectCount; i++){
+			if(puntaje > 0 && puntaje-5 >=0){
+				puntaje -= 5; 
+			}else if(puntaje-5 < 0){
+				puntaje =0;
+			}
+		}
+		return puntaje;
 	}
 
 

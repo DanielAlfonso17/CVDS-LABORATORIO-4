@@ -16,38 +16,46 @@ public class GameScoreTest
 					
      */
     @Test
-    public void shouldRestScoreOriginalScoreLetterIncorrect()
+    public void shouldScoreOriginalOne()
     {
 		OriginalScore score = new OriginalScore();
-		int puntaje = score.calculateScore(0,10);
-        Assert.assertEquals(1,puntaje);
+		int puntaje = score.calculateScore(0,2);
+        Assert.assertEquals(80,puntaje);
     }
 	@Test
-    public void shouldSumScoreBonusScoreLetterCorrect()
+    public void shouldScoreOriginalTwo()
     {
-		BonusScore score = new BonusScore();
-		int puntaje = score.calculateScore(10,0);
-        Assert.assertEquals(1,puntaje);
-    }
-	@Test
-    public void shouldSumScorePowerScoreLetterCorrect()
-    {
-		PowerScore score = new PowerScore();
-		int puntaje = score.calculateScore(5,0);
-        Assert.assertEquals(1,puntaje);
-    }
-	@Test
-    public void shouldRestBonusScoreLetterIncorrect()
-    {
-		BonusScore score = new BonusScore();
-		int puntaje = score.calculateScore(0,5);
-        Assert.assertEquals(1,puntaje);
-    }
-	@Test
-    public void shouldRestPowerScoreLetterIncorrect()
-    {
-		PowerScore score = new PowerScore();
+		OriginalScore score = new OriginalScore();
 		int puntaje = score.calculateScore(0,8);
-        Assert.assertEquals(1,puntaje);
+        Assert.assertEquals(20,puntaje);
+    }
+	@Test
+    public void shouldScoreBonusOne()
+    {
+		BonusScore score = new BonusScore();
+		int puntaje = score.calculateScore(5,2);
+        Assert.assertEquals(40,puntaje);
+    }
+	@Test
+    public void shouldScoreBonusTwo()
+    {
+		BonusScore score = new BonusScore();
+		int puntaje = score.calculateScore(6,5);
+        Assert.assertEquals(35,puntaje);
+    }
+	@Test
+    public void shouldScorePowerOne()
+    {
+		PowerScore score = new PowerScore();
+		int puntaje = score.calculateScore(3,2);
+        Assert.assertEquals(139,puntaje);
+    }
+	
+	@Test
+    public void shouldScorePowerTwo()
+    {
+		PowerScore score = new PowerScore();
+		int puntaje = score.calculateScore(2,2);		
+        Assert.assertEquals(14,puntaje);
     }
 }

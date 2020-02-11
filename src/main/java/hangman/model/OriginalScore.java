@@ -13,7 +13,14 @@ public class OriginalScore implements GameScore{
 	@throws cuando el puntaje minimo es menor que 0 
 	**/
 	public int calculateScore(int correctCount, int incorrectCount){
-		return 1;
+		for(int i=0; i< incorrectCount;i++){
+			if(puntaje > 0 && puntaje-10 >=0){
+				puntaje -= 10; 
+			}else if(puntaje-10 < 0){
+				puntaje =0;
+			}
+		}
+		return puntaje;
 	}
 
 

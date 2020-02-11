@@ -14,7 +14,21 @@ public class PowerScore implements GameScore{
 	@throws cuando el puntaje minimo es menor que 0 
 	**/
 	public int calculateScore(int correctCount, int incorrectCount){
-		return 1;
+		for(int i=1; i<=correctCount; i++){
+			if(puntaje+correctCount>=500){
+				puntaje = 500;
+			}else{
+				puntaje += Math.pow(5,i);
+			}
+		}
+		for(int i=0;i <incorrectCount; i++){
+			if(puntaje > 0 && puntaje-8 >=0){
+				puntaje -= 8; 
+			}else if(puntaje-8 < 0){
+				puntaje =0;
+			}
+		}
+		return puntaje;
 	}
 
 
