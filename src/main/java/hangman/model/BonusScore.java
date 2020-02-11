@@ -17,7 +17,6 @@ public class BonusScore implements GameScore{
             throw new modelException("Parametros Invalidos.");
         }
         int respuesta = 0;
-        int puntaje = 0;
         respuesta = puntaje - (incorrectCount*5) + (correctCount*10);
         if (respuesta < 0){
             respuesta = 0;
