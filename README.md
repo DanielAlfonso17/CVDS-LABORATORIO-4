@@ -1,7 +1,5 @@
 # CVDS LABORATORIO 4
 # Daniel Felipe Alfonso Bueno 
-### Procesos de Desarrollo de Software
-
 ### Desarrollo Dirigido por Pruebas + DIP + DI + Contenedores Livianos
 
 
